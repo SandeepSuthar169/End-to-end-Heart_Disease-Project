@@ -23,7 +23,7 @@ uvicorn
 jinja2
 python-multipart
 from_root
+pymongo
 dill
 dvc
 mlflow
--e. 
