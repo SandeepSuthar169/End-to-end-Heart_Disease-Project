@@ -13,3 +13,21 @@ stages:
       md5: 73da1cdb49df823788cc618b3d194d83.dir
       size: 38097
       nfiles: 2
+  data_validation:
+    cmd: python src/data/data_validation.py
+    deps:
+    - path: data/raw
+      hash: md5
+      md5: 73da1cdb49df823788cc618b3d194d83.dir
+      size: 38097
+      nfiles: 2
+    - path: src/data/data_validation.py
+      hash: md5
+      md5: 77d7cdd2dc4a6484d3f6d04e49c6aed4
+      size: 1445
+    outs:
+    - path: data/processed
+      hash: md5
+      md5: bfc107bde5765fb1208cec6a1d9865a3.dir
+      size: 31029
+      nfiles: 2

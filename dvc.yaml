@@ -5,3 +5,10 @@ stages:
     - src/data/data_ingestion.py
     outs:
     - data/raw
+  data_validation:
+    cmd: python src/data/data_validation.py
+    deps:
+    - data/raw
+    - src/data/data_validation.py
+    outs:
+    - data/processed
