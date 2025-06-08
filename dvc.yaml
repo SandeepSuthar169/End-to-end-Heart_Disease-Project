@@ -12,3 +12,11 @@ stages:
     - src/data/data_validation.py
     outs:
     - data/processed
+
+  model_building:
+    cmd: python src/model/model_building.py
+    deps:
+    - data/processed
+    - src/model/model_building.py
+    outs:
+    - model.pkl

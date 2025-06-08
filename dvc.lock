@@ -31,3 +31,20 @@ stages:
       md5: bfc107bde5765fb1208cec6a1d9865a3.dir
       size: 31029
       nfiles: 2
+  model_building:
+    cmd: python src/model/model_building.py
+    deps:
+    - path: data/processed
+      hash: md5
+      md5: bfc107bde5765fb1208cec6a1d9865a3.dir
+      size: 31029
+      nfiles: 2
+    - path: src/model/model_building.py
+      hash: md5
+      md5: 982dbdd0c085d0190ef0e8a1aebaf22e
+      size: 2025
+    outs:
+    - path: model.pkl
+      hash: md5
+      md5: 7d1e55650014e21b4568ed3e3d1fc531
+      size: 4
