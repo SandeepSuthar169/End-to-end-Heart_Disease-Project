@@ -3,7 +3,7 @@ import numpy as np
 import os
 import yaml
 import pickle
-from sklearn.preprocessing import StandardScaler, OneHotEncoder, LabelEncoder
+from sklearn.preprocessing import StandardScaler, OneHotEncoder
 from sklearn.pipeline import make_pipeline, Pipeline
 from sklearn.compose import ColumnTransformer
 from sklearn.ensemble import RandomForestClassifier
@@ -29,14 +29,13 @@ def build_pipeline(n_estimators: int,
     ('one', OneHotEncoder(), ['ExerciseAngina', 'Sex']),
     ('std', StandardScaler(), ['MaxHR', 'Age', 'RestingBP', 'Cholesterol'])
     ],
-    remainder='passthrough'
+        remainder='passthrough'
     )
     pipeline = Pipeline(steps=[
-    ('proprocess', process),
-    ('classi', RandomForestClassifier(
-        n_estimators=n_estimators,
-        max_depth=max_depth
-    ))
+        ('proprocess', process),
+        ('classi', RandomForestClassifier(
+            n_estimators=n_estimators,
+            max_depth=max_depth))
     ])
     return pipeline
 
@@ -44,6 +43,7 @@ def build_pipeline(n_estimators: int,
 
 def train(pipeline:Pipeline, X, y) -> Pipeline:
     pipeline.fit(X, y)
+    return pipeline
 
 def save_model(pipeline: Pipeline, output_path: str):
     with open(output_path, 'wb') as file:
