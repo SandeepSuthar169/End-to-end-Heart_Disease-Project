@@ -45,7 +45,7 @@ def main():
     save_data(train_data, os.path.join(raw_data_path, "train.csv"))
     save_data(test_data, os.path.join(raw_data_path, "test.csv"))
 
-    CONNECTION_URL = "mongodb+srv://sssuthar004:Mlj1a9vL124TJyz5@cluster0.vf9oi5d.mongodb.net/"
+    CONNECTION_URL = "xxxxxx/xxxxxxxxxxxx/xxxxxxxxxxxxxxxx/xxxxxxxxxxxxxxxxxx/xxxxxxxxxxxxxxx" # this string you provided is a MongoDB connection URI
     DB_NAME = "heart"
     COLLENTION_NAME = "heart-Data"
 
