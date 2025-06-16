@@ -6,6 +6,7 @@ from pymongo import MongoClient
 from sklearn.model_selection import train_test_split
 
 
+
 def load_params(filepath: str) -> float:
     with open(filepath, 'r') as file:
         params = yaml.safe_load(file)
@@ -39,7 +40,6 @@ def main():
 
     df = load_data(data_filepath)
     test_size = load_params(params_filepath)
-
     train_data, test_data = split_data(df, test_size)
     
     save_data(train_data, os.path.join(raw_data_path, "train.csv"))
