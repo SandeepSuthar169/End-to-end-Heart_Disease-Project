@@ -36,8 +36,7 @@ def build_pipeline(n_estimators: int,
         ('classi', RandomForestClassifier(
             n_estimators=n_estimators,
             max_depth=max_depth))
-    ])
-    
+    ])  
     return pipeline
 
 
