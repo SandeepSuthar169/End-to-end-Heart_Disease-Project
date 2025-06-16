@@ -8,12 +8,10 @@ from sklearn.metrics import accuracy_score, f1_score, recall_score, precision_sc
 def load_test_data(filepath: str) -> pd.DataFrame:
     return pd.read_csv(filepath)
 
-
 def load_model(model_path: str):
     with open(model_path, "rb") as file:
          return pickle.load(file)
     
-
 def evaluate_model(model, X_test, y_test) -> dict:
     y_pred = model.predict(X_test)
   
