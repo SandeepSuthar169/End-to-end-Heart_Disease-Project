@@ -13,22 +13,20 @@ def columns_transformation(df):
     "NAP":3,
     "ATA":2,
     "TA":1})
-
     df['ChestPainType'] = df['ChestPainType'].astype(int)
 
     df['RestingECG'] = df['RestingECG'].replace({
     "Normal": 1,
     "ST": 2,
     "LVH":3})
-    
     df['RestingECG'] = df['RestingECG'].astype(int)
 
     df['ST_Slope'] = df['ST_Slope'].replace({
     "Flat": 1,
     "Up": 2,
     "Down": 3})
-    
     df['ST_Slope'] = df['ST_Slope'].astype(int)
+    
     return df
 
 def save_data(df: pd.DataFrame, filepath: str) -> None:
